@@ -40,7 +40,8 @@ class Restrictions:
             c = word[i]
             if response[i] == constants.YELLOW_COLOR:
                 if c in self.green_restrictions.values():
-                    if c not in added_green.values():
+                    
+                    if list(self.green_restrictions.values()).count(c) - list(added_green.values()).count(c) > 0:
                         continue
 
                 if c not in self.yellow_restrictions:
@@ -84,7 +85,7 @@ class Restrictions:
         return True
 
 def entropy(x):
-    return x * ( 1 - x)
+    return x * (1 - x)
 
 def calculate_scoreFreq(word, total_freq, pos_freq):
     '''
