@@ -1,12 +1,10 @@
 from cgi import test
 from collections import Counter
-from pdb import post_mortem
 import constants
 import checker
 import input
 import word_operations
 import string
-import random
 
 class Restrictions:
 
