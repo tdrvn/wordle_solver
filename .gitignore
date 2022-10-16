@@ -1,0 +1,13 @@
+answer_words.txt
+logs.txt
+__pycache__/checker.cpython-38.pyc
+__pycache__/checker.cpython-310.pyc
+__pycache__/constants.cpython-38.pyc
+__pycache__/constants.cpython-310.pyc
+__pycache__/input.cpython-38.pyc
+__pycache__/input.cpython-310.pyc
+__pycache__/main.cpython-38.pyc
+__pycache__/main.cpython-310.pyc
+__pycache__/word_init.cpython-310.pyc
+__pycache__/word_operations.cpython-38.pyc
+__pycache__/word_operations.cpython-310.pyc
