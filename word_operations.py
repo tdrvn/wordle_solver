@@ -4,11 +4,11 @@ from collections import Counter
 import constants
 import requests
 
-def getInitWords():
+def getInitWords(path = 'words.txt'):
     '''
         Returns all 5 letter words from words.txt.
     '''
-    with open('words.txt', 'r') as f:
+    with open(path, 'r') as f:
         words = f.read().splitlines()
 
     return words

@@ -21,18 +21,25 @@ def get_response(word, *_o):
     return answer
         
 def testing_tool():
-    words = word_operations.getInitWords()
+    words = word_operations.getInitWords('answer_words.txt')
     average_score = 0
     efficiency = 0
-    for i in range(2500):
-        constants.FINAL_WORD = random.choice(words)
-        print(constants.FINAL_WORD)
+    for i in range(len(words)):
+        constants.FINAL_WORD = words[i]
+
+        with open('logs.txt','a') as out:
+            print(constants.FINAL_WORD)
+            out.write(constants.FINAL_WORD + '\n')
+            
         answer = main.main(True)
-        average_score += answer
         efficiency += (answer <= 6)
-        print(f"Finished in {answer} rounds")
-        print(f"Efficiency until now is {efficiency / (i + 1)}")
-        print(f"The average score until now is {average_score / (i + 1)}")
+        if efficiency:
+            average_score += answer
+        with open('logs.txt','a') as out:
+            out.write(f"Finished in {answer} rounds\n")
+            print(f"Finished in {answer} rounds")
+            out.write(f"Efficiency until now is {efficiency / (i + 1)}\n")       
+            out.write(f"The average score until now is {average_score / (i + 1)}\n")
 
 if __name__ == '__main__':
     testing_tool()
