@@ -20,14 +20,14 @@ def get_response(word, *_o):
             frvRem.subtract(word[i])
     return answer
         
-def testing_tool():
+def testing_tool(logs):
     words = word_operations.getInitWords('answer_words.txt')
     average_score = 0
     efficiency = 0
     for i in range(len(words)):
         constants.FINAL_WORD = words[i]
 
-        with open('logs.txt','a') as out:
+        with open(logs,'a') as out:
             print(constants.FINAL_WORD)
             out.write(constants.FINAL_WORD + '\n')
             
@@ -35,11 +35,11 @@ def testing_tool():
         efficiency += (answer <= 6)
         if efficiency:
             average_score += answer
-        with open('logs.txt','a') as out:
+        with open(logs,'a') as out:
             out.write(f"Finished in {answer} rounds\n")
             print(f"Finished in {answer} rounds")
             out.write(f"Efficiency until now is {efficiency / (i + 1)}\n")       
             out.write(f"The average score until now is {average_score / (i + 1)}\n")
 
 if __name__ == '__main__':
-    testing_tool()
+    testing_tool('logs2-onlyAnswers.txt')
